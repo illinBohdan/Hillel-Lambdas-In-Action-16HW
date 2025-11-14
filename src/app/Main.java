@@ -12,18 +12,19 @@ public class Main {
                 return a + b;
             }
         };
-        System.out.println(mathOperation.operate(5, 100));
+        System.out.println("Результат використання анонімного класу");
+        System.out.println(mathOperation.operate(5, 100)+"\n");
 
+        System.out.println("Результат використання лямбда виразу");
         StringManipulator sm = string -> string.toUpperCase();
-        System.out.println(sm.toUpperCase("rere"));
+        System.out.println(sm.capitalize("rere")+"\n");
 
-
-
+        System.out.println("Результат використання посилання на метод");
         Function<String, Integer> counter = StringListProcessor :: countUppercase;
-        System.out.println(counter.apply("ВасяКукуКККaaaA"));
+        System.out.println(counter.apply("ВасяКукуTTsPaQaA")+"\n");
 
+        System.out.println("Результат використання інтерфейсу Supplier<T>");
         Supplier<Integer> supplier = () -> RandomNumberGenerator.generateRandomNumber(1, 100);
-
         System.out.println(supplier.get());
 
     }
