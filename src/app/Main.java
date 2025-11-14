@@ -1,5 +1,7 @@
 package app;
 
+import java.util.function.Function;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -13,6 +15,11 @@ public class Main {
 
         StringManipulator sm = string -> string.toUpperCase();
         System.out.println(sm.toUpperCase("rere"));
+
+
+
+        Function<String, Integer> counter = StringListProcessor :: countUppercase;
+        System.out.println(counter.apply("ВасяКукуКККaaaA"));
 
     }
 }
